@@ -19,4 +19,14 @@ app.use(express.urlencoded({extended:true,
 app.use(express.static("public"));
 app.use(cookieParser());
 
+
+// routes import
+import userRouter from "./routes/User.Routes.js";
+
+app.use("/api/v1/users" , userRouter);
+// yaha se control pass ho jayega aur userRouter ko chala jayega
+// https:localhost:8000/user/register
+// https:localhost:8000/user/login
+
+
 export {app};
